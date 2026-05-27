@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>王清萌 · 公共关系与市场营销 · 作品集</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #f8f4ef;
+    --warm-white: #fdfaf6;
+    --charcoal: #1c1a18;
+    --mid: #4a4540;
+    --light: #9a9189;
+    --accent: #b5826a;
+    --accent-light: #e8d5c8;
+    --sage: #8a9e8c;
+    --border: #e2d9d0;
+  }
+  body {
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+  .zh { font-family: 'Noto Serif SC', serif; }
+  @media (pointer: fine) {
+    * { cursor: none; }
+    #cursor, #cursor-ring {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      will-change: left, top, width, height;
+    }
+    #cursor {
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      transition: transform .15s ease, width .2s, height .2s, background .2s;
+    }
+    #cursor-ring {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      opacity: 0.6;
+      transition: transform .35s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .2s;
+    }
+    a:hover ~ #cursor, button:hover ~ #cursor { transform: translate(-50%, -50%) scale(1.5); }
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
+    background: rgba(253, 250, 246, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s, padding .3s;
+  }
+  nav.scrolled { border-color: var(--border); padding-top: 16px; padding-bottom: 16px; }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    transition: color .2s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  .lang-toggle {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .lang-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+    color: var(--light);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  .lang-btn.active { background: var(--accent); color: #fff; }
+  section { padding: 100px 60px; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin-left: 20px;
+    margin-bottom: 4px;
+  }
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-text {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 160px;
+    font-weight: 300;
+    color: var(--accent-light);
+    letter-spacing: -0.02em;
+    opacity: 0.4;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .hero-left { position: relative; z-index: 2; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp .8s .2s forwards;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 7vw, 88px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--charcoal);
+    opacity: 0;
+    animation: fadeUp .9s .35s forwards;
+  }
+  .hero-name span { color: var(--accent); font-style: italic; }
+  .hero-subtitle {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--mid);
+    max-width: 480px;
+    opacity: 0;
+    animation: fadeUp .9s .5s forwards;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 44px;
+    opacity: 0;
+    animation: fadeUp .9s .65s forwards;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--charcoal);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    margin-top: 44px;
+    opacity: 0;
+    animation: fadeUp .9s .8s forwards;
+  }
+  .btn-primary {
+    padding: 14px 32px;
+    background: var(--charcoal);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background .2s, transform .2s;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+  .btn-outline {
+    padding: 14px 32px;
+    border: 1px solid var(--charcoal);
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: .2s;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 1.2s .4s forwards;
+  }
+  .avatar-wrap {
+    width: 380px;
+    height: 460px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, #d4c5b8 100%);
+    border-radius: 4px 120px 4px 120px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 40px 40px 80px rgba(0, 0, 0, 0.12);
+  }
+  .avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .avatar-deco {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .avatar-deco2 {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid var(--sage);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  #about { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-bio {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--mid);
+  }
+  .about-bio p + p { margin-top: 20px; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .skill-tag {
+    padding: 12px 16px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+    position: relative;
+    overflow: hidden;
+    transition: 0.2s;
+  }
+  .skill-tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+  }
+  .skill-tag:hover { border-color: var(--accent); color: var(--charcoal); }
+  .about-highlights {
+    margin-top: 40px;
+    display: grid;
+    gap: 16px;
+  }
+  .highlight-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .hl-label {
+    font-size: 12px;
+    color: var(--light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .hl-value {
+    font-size: 15px;
+    color: var(--charcoal);
+    font-weight: 400;
+  }
+  .edu-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+  }
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--sage));
+  }
+  .edu-school {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .edu-degree {
+    font-size: 15px;
+    color: var(--mid);
+    margin-bottom: 24px;
+  }
+  .edu-period {
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    font-size: 12px;
+    color: var(--light);
+    letter-spacing: 0.08em;
+  }
+  .gpa-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 28px 0;
+  }
+  .gpa-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .gpa-desc {
+    font-size: 12px;
+    color: var(--light);
+    margin-top: 4px;
+  }
+  .courses-wrap { margin-top: 24px; }
+  .course-label {
+    font-size: 12px;
+    color: var(--light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .course-tag {
+    padding: 6px 14px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--mid);
+  }
+  #experience { background: var(--cream); }
+  .exp-list { display: grid; gap: 0; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:first-child { border-top: 1px solid var(--border); }
+  .exp-company {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .exp-role {
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .exp-period {
+    font-size: 12px;
+    color: var(--light);
+  }
+  .exp-bullets {
+    list-style: none;
+  }
+  .exp-bullets li {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--mid);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .exp-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .exp-highlight {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .proj-card {
+    border: 1px solid var(--border);
+    padding: 36px;
+    border-radius: 2px;
+    background: var(--warm-white);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .proj-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
+  }
+  .proj-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-light);
+  }
+  .proj-card:hover::after { transform: scaleX(1); }
+  .proj-award {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, var(--accent), #c49a7e);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .proj-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .proj-period {
+    font-size: 11px;
+    color: var(--light);
+    margin-bottom: 16px;
+  }
+  .proj-desc {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.75;
+  }
+  #portfolio { background: var(--cream); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .port-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 32px 28px;
+    transition: 0.25s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .port-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-light);
+  }
+  .port-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+  }
+  .port-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .port-desc {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.7;
+    flex: 1;
+  }
+  .port-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 8px;
+    font-weight: 400;
+    transition: gap 0.2s;
+  }
+  .port-link:hover { gap: 10px; }
+  .port-tag {
+    align-self: flex-start;
+    padding: 3px 10px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 10px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+  }
+  .contact-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .contact-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .contact-tagline em { color: var(--accent); font-style: italic; }
+  .contact-text {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.8;
+    margin-bottom: 36px;
+  }
+  .contact-info {
+    display: grid;
+    gap: 16px;
+  }
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: 0.2s;
+  }
+  .contact-row:hover { border-color: var(--accent); }
+  .ci-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.8;
+  }
+  .ci-label {
+    font-size: 10px;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2px;
+  }
+  .ci-value {
+    font-size: 14px;
+    color: var(--charcoal);
+  }
+  footer {
+    background: var(--charcoal);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    font-weight: 400;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .8s cubic-bezier(0.165, 0.84, 0.44, 1), transform .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+  .reveal-d4 { transition-delay: 0.4s; }
+  [data-lang="en"] { display: none; }
+  body.lang-en [data-lang="zh"] { display: none; }
+  body.lang-en [data-lang="en"] { display: block; }
+  .inline-zh { display: inline; }
+  .inline-en { display: none; }
+  body.lang-en .inline-zh { display: none; }
+  body.lang-en .inline-en { display: inline; }
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    nav .nav-links a:not(.lang-btn) { display: none; }
+    section { padding: 70px 24px; }
+    #hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+    .hero-right { display: none; }
+    .about-grid, .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 12px; }
+    .gpa-grid { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <span class="inline-zh">王清萌</span>
+    <span class="inline-en">Wang Qingmeng</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about"><span class="inline-zh">关于</span><span class="inline-en">About</span></a>
+    <a href="#education"><span class="inline-zh">教育</span><span class="inline-en">Education</span></a>
+    <a href="#experience"><span class="inline-zh">经历</span><span class="inline-en">Experience</span></a>
+    <a href="#projects"><span class="inline-zh">项目</span><span class="inline-en">Projects</span></a>
+    <a href="#portfolio"><span class="inline-zh">作品集</span><span class="inline-en">Portfolio</span></a>
+    <a href="#contact"><span class="inline-zh">联系</span><span class="inline-en">Contact</span></a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('zh')">ZH</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg-text">PR</div>
+  <div class="hero-left">
+    <div class="hero-tag"><span class="inline-zh">媒介投放 · 数据分析 · 市场执行 · 活动策划</span><span class="inline-en">Media Buying · Data Analysis · Market Execution · Event Planning</span></div>
+    <h1 class="hero-name"><span class="inline-zh">王<span>清萌</span></span><span class="inline-en">Wang<br><span>Qingmeng</span></span></h1>
+    <p class="hero-subtitle"><span class="inline-zh">数据驱动的整合营销人，擅长媒介投放策略、竞品分析与全链路效果优化。持有市场分析研究员(MARs)Level1，雅思7分，北师香港浸会大学公共关系与广告学在读。</span><span class="inline-en">Data-driven integrated marketer specializing in media buying, competitive analysis, and full-funnel optimization. MARs Level 1, IELTS 7.0, PR & Advertising major at BNU-HKBU UIC.</span></p>
+    <div class="hero-stats"><div class="stat-item"><div class="stat-num">3.78</div><div class="stat-label"><span class="inline-zh">综合绩点 / 4.0</span><span class="inline-en">CGPA / 4.0</span></div></div><div class="stat-item"><div class="stat-num">30W+</div><div class="stat-label"><span class="inline-zh">单篇最高浏览量</span><span class="inline-en">Peak Post Views</span></div></div><div class="stat-item"><div class="stat-num">Top 8%</div><div class="stat-label"><span class="inline-zh">专业排名</span><span class="inline-en">Major Ranking</span></div></div></div>
+    <div class="hero-cta"><a href="#portfolio" class="btn-primary"><span class="inline-zh">查看作品集</span><span class="inline-en">View Portfolio</span></a><a href="#contact" class="btn-outline"><span class="inline-zh">联系我</span><span class="inline-en">Get in Touch</span></a></div>
+  </div>
+  <div class="hero-right">
+    <div class="avatar-wrap">
+      <img src="my-photo.jpg" alt="Wang Qingmeng">
+      <div class="avatar-deco"></div>
+      <div class="avatar-deco2"></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title"><span class="inline-zh">关于我</span><span class="inline-en">About</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="reveal reveal-d1">
+      <div class="about-bio">
+        <p><span class="inline-zh">我是王清萌，21岁，北师香港浸会大学公共关系与广告学专业大三学生。我热爱用数据驱动决策，在媒介投放、市场执行和活动策划中寻找创意与效果的平衡点。实习期间，我积累了小红书、抖音双平台达人投放与内容优化的实战经验，擅长通过A/B测试和漏斗分析提升转化率。</span><span class="inline-en">I am Wang Qingmeng, 21, a junior majoring in PR & Advertising at BNU-HKBU UIC. Passionate about data-driven decision-making, I excel at balancing creativity and performance in media buying, market execution, and event planning. I have hands-on experience in KOL seeding and content optimization on Xiaohongshu and Douyin, skilled in A/B testing and funnel analysis to boost conversion.</span></p>
+        <p><span class="inline-zh">在人民日报-证券时报，我深度参与行业研究与竞品分析；在高途和新东方，我独立负责媒介投放全流程——从达人筛选、Brief撰写、内容审核到数据复盘，并配合线下活动进行A/B测试，成功提升转化率15%以上。同时，我运营个人小红书账号，打造过30万+浏览量的爆款内容，验证了从内容策略到执行优化的完整能力。</span><span class="inline-en">At People's Daily, I conducted competitive analysis and industry research. At Gaotu and New Oriental, I managed the entire media buying process—KOL selection, brief writing, content review, and performance tracking—combined with offline A/B tests, achieving >15% conversion uplift. I also grew my personal Xiaohongshu account to a viral post with 300K+ views.</span></p>
+        <p><span class="inline-zh">我熟练掌握Excel、SPSS、Python、SQL，持有市场分析研究员Level1证书，能够独立完成消费者洞察、竞品分析和数据可视化。全英文教学环境（雅思7，口语写作双7）让我能够无缝对接跨国团队，兼具国际视野与本土落地能力。</span><span class="inline-en">Proficient in Excel, SPSS, Python, SQL, and certified MARs Level 1. Capable of conducting consumer insights, competitive analysis, and data visualization. All-English academic environment (IELTS 7.0) enables me to work seamlessly in cross-cultural teams.</span></p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-row"><span class="hl-label"><span class="inline-zh">英语能力</span><span class="inline-en">English</span></span><span class="hl-value">IELTS 7.0 (S:7 W:7)</span></div>
+        <div class="highlight-row"><span class="hl-label"><span class="inline-zh">专业证书</span><span class="inline-en">Certificate</span></span><span class="hl-value">市场分析研究员 MARs Level 1</span></div>
+        <div class="highlight-row"><span class="hl-label"><span class="inline-zh">奖学金</span><span class="inline-en">Scholarship</span></span><span class="hl-value">校级一等奖学金（专业前8%）</span></div>
+        <div class="highlight-row"><span class="hl-label"><span class="inline-zh">电话</span><span class="inline-en">Phone</span></span><span class="hl-value">159 8952 1481</span></div>
+        <div class="highlight-row"><span class="hl-label"><span class="inline-zh">邮箱</span><span class="inline-en">Email</span></span><span class="hl-value">t330031260@mail.bnbu.edu.cn</span></div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="course-label"><span class="inline-zh">核心能力</span><span class="inline-en">Core Competencies</span></div>
+      <div class="skills-grid">
+        <div class="skill-tag"><span class="inline-zh">媒介投放策略</span><span class="inline-en">Media Buying Strategy</span></div>
+        <div class="skill-tag"><span class="inline-zh">达人筛选与Brief</span><span class="inline-en">KOL Selection & Briefing</span></div>
+        <div class="skill-tag"><span class="inline-zh">内容审核与优化</span><span class="inline-en">Content Review & Optimization</span></div>
+        <div class="skill-tag"><span class="inline-zh">A/B测试与漏斗分析</span><span class="inline-en">A/B Testing & Funnel Analysis</span></div>
+        <div class="skill-tag"><span class="inline-zh">数据分析与可视化</span><span class="inline-en">Data Analysis & Visualization</span></div>
+        <div class="skill-tag"><span class="inline-zh">竞品与行业研究</span><span class="inline-en">Competitive & Industry Research</span></div>
+        <div class="skill-tag"><span class="inline-zh">活动策划与执行</span><span class="inline-en">Event Planning & Execution</span></div>
+        <div class="skill-tag"><span class="inline-zh">SPSS / Excel / Python</span><span class="inline-en">SPSS / Excel / Python</span></div>
+        <div class="skill-tag"><span class="inline-zh">SQL / 数据透视表</span><span class="inline-en">SQL / Pivot Tables</span></div>
+        <div class="skill-tag"><span class="inline-zh">跨平台内容策略</span><span class="inline-en">Cross‑platform Content Strategy</span></div>
+      </div>
+      <div class="course-label" style="margin-top: 28px;"><span class="inline-zh">关键成果</span><span class="inline-en">Key Results</span></div>
+      <div style="display:grid; gap:12px; margin-top:12px;">
+        <div style="padding:16px; background:var(--warm-white); border-left:3px solid var(--accent); border-radius:0 2px 2px 0;"><div style="font-size:22px; font-family:'Cormorant Garamond',serif; font-weight:500; color:var(--accent);">+15%</div><div style="font-size:12px; color:var(--mid);"><span class="inline-zh">高途媒介投放后整体转化率提升</span><span class="inline-en">Conversion uplift after media buying optimization at Gaotu</span></div></div>
+        <div style="padding:16px; background:var(--warm-white); border-left:3px solid var(--sage); border-radius:0 2px 2px 0;"><div style="font-size:22px; font-family:'Cormorant Garamond',serif; font-weight:500; color:var(--sage);">5% → 12%</div><div style="font-size:12px; color:var(--mid);"><span class="inline-zh">新东方小红书账号互动率提升（A/B测试驱动）</span><span class="inline-en">Engagement rate growth via A/B testing at New Oriental</span></div></div>
+        <div style="padding:16px; background:var(--warm-white); border-left:3px solid #b8a89a; border-radius:0 2px 2px 0;"><div style="font-size:22px; font-family:'Cormorant Garamond',serif; font-weight:500; color:#b8a89a;">30W+</div><div style="font-size:12px; color:var(--mid);"><span class="inline-zh">个人小红书单篇爆款浏览量</span><span class="inline-en">Personal Xiaohongshu viral post views</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title"><span class="inline-zh">教育经历</span><span class="inline-en">Education</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-card reveal reveal-d1">
+    <div class="edu-period">2023.09 — 2027.06</div>
+    <div class="edu-school"><span class="inline-zh">北师香港浸会大学联合国际学院</span><span class="inline-en">BNU-HKBU United International College</span></div>
+    <div class="edu-degree"><span class="inline-zh">新闻传播学 · 公共关系与广告学 · 本科</span><span class="inline-en">BA in Journalism & Communication · PR & Advertising</span></div>
+    <div class="gpa-grid">
+      <div class="gpa-item"><div class="gpa-num">3.85 / 4.0</div><div class="gpa-desc"><span class="inline-zh">核心专业课绩点</span><span class="inline-en">Core Course GPA</span></div></div>
+      <div class="gpa-item"><div class="gpa-num">3.78 / 4.0</div><div class="gpa-desc"><span class="inline-zh">综合绩点（前10%）</span><span class="inline-en">CGPA (Top 10%)</span></div></div>
+      <div class="gpa-item"><div class="gpa-num">Top 8%</div><div class="gpa-desc"><span class="inline-zh">校级一等奖学金</span><span class="inline-en">First-Class Scholarship</span></div></div>
+    </div>
+    <div class="courses-wrap">
+      <div class="course-label"><span class="inline-zh">核心课程</span><span class="inline-en">Core Courses</span></div>
+      <div class="course-tags">
+        <span class="course-tag">高级定量分析 (SPSS)</span>
+        <span class="course-tag">Python</span>
+        <span class="course-tag">媒体策划与执行</span>
+        <span class="course-tag">整合营销传播</span>
+        <span class="course-tag">公共关系写作</span>
+        <span class="course-tag">电脑视觉设计 (PS/AI)</span>
+        <span class="course-tag">消费者行为研究</span>
+        <span class="course-tag">广告学原理</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title"><span class="inline-zh">实习经历</span><span class="inline-en">Experience</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-list">
+    <!-- 人民日报·证券时报 -->
+    <div class="exp-item reveal reveal-d1">
+      <div class="exp-meta">
+        <div class="exp-company"><span class="inline-zh">人民日报·证券时报</span><span class="inline-en">People's Daily — Securities Times</span></div>
+        <div class="exp-role"><span class="inline-zh">市场分析实习生</span><span class="inline-en">Market Research Intern</span></div>
+        <div class="exp-period">2025.07 — 2025.09</div>
+      </div>
+      <div>
+        <ul class="exp-bullets">
+          <li><span class="inline-zh">数据追踪与行业监控：定期追踪华南地区上市公司（制造、能源、科技）经营动态及政策变化，搭建数据追踪表，提供周度/月度市场简报。</span><span class="inline-en">Tracked public companies in South China, built data trackers, delivered weekly/monthly market briefs.</span></li>
+          <li><span class="inline-zh">竞品与产业链分析：协助完成6份行业深度报告，负责竞对动作梳理与数据可视化，“国产替代趋势”分析被采纳为专题报道方向。</span><span class="inline-en">Co-authored 6 industry reports; competitive intelligence & visualization; "domestic substitution" adopted as feature story.</span></li>
+          <li><span class="inline-zh">政策与数据结合：利用Excel处理产值、进出口、研发投入等公开数据，量化评估细分赛道增长潜力，为报道选题提供数据支撑。</span><span class="inline-en">Processed industry data in Excel to quantify growth potential and inform editorial topics.</span></li>
+        </ul>
+        <span class="exp-highlight">6份行业报告 · 竞品分析驱动专题方向</span>
+      </div>
+    </div>
+    <!-- 高途 -->
+    <div class="exp-item reveal reveal-d2">
+      <div class="exp-meta">
+        <div class="exp-company"><span class="inline-zh">高途</span><span class="inline-en">Gaotu</span></div>
+        <div class="exp-role"><span class="inline-zh">市场部 · 用户增长与活动营销实习生</span><span class="inline-en">User Growth & Event Marketing Intern</span></div>
+        <div class="exp-period">2024.06 — 2024.09</div>
+      </div>
+      <div>
+        <ul class="exp-bullets">
+          <li><span class="inline-zh">媒介投放与达人合作：协助小红书&抖音平台的媒介投放，包括筛选优质达人、审核图文/视频素材，确保内容与品牌调性一致；撰写抖音达人合作Brief（含口播话术、场景、转化引导要求），并跟进内容修改与上线。</span><span class="inline-en">Assisted media buying on Xiaohongshu & Douyin: KOL selection, content review, wrote Douyin briefs with scripts and CTAs, managed content delivery.</span></li>
+          <li><span class="inline-zh">转化漏斗优化：基于用户画像和投放数据构建漏斗模型（曝光→点击→咨询→报名），定位流失节点，优化双平台达人内容策略，整体转化率提升约15%。</span><span class="inline-en">Built conversion funnel; identified drop-offs; optimized KOL content strategy → +15% conversion rate.</span></li>
+          <li><span class="inline-zh">活动策划与A/B测试：独立策划3场线下校园推广活动，同步配合线上媒介投放进行A/B测试（物料/话术），活动到场转化率达120%（超目标20%），活动ROI同比提升15%。</span><span class="inline-en">Planned 3 campus events with A/B testing; on-site conversion 120% of target; event ROI +15% YoY.</span></li>
+        </ul>
+        <span class="exp-highlight">媒介投放ROI +15% · 转化漏斗优化 · 线下活动A/B测试</span>
+      </div>
+    </div>
+    <!-- 新东方 -->
+    <div class="exp-item reveal reveal-d3">
+      <div class="exp-meta">
+        <div class="exp-company"><span class="inline-zh">新东方</span><span class="inline-en">New Oriental</span></div>
+        <div class="exp-role"><span class="inline-zh">市场部 · 品牌营销与媒介投放实习生</span><span class="inline-en">Brand Marketing & Media Buying Intern</span></div>
+        <div class="exp-period">2024.02 — 2024.06</div>
+      </div>
+      <div>
+        <ul class="exp-bullets">
+          <li><span class="inline-zh">内容投放与达人合作：负责“新东方出国留学”小红书账号的内容投放及校园博主合作，包括达人筛选、脚本审核、内容发布及数据追踪。</span><span class="inline-en">Managed content seeding and campus KOL collaboration on Xiaohongshu: selection, script review, posting, and performance tracking.</span></li>
+          <li><span class="inline-zh">A/B测试优化互动率：通过A/B测试迭代标题、封面、发布时间，将账号平均互动率从5%提升至12%；同时协助完成新品上线期间的达人Brief撰写与内容铺排。</span><span class="inline-en">A/B testing on titles/covers/timing lifted engagement from 5% to 12%; wrote KOL briefs for new product launches.</span></li>
+          <li><span class="inline-zh">数据驱动涨粉：1个月内涨粉800+，单月涨粉效率为同期实习生团队最高，并输出周度竞品分析报告指导内容方向。</span><span class="inline-en">Gained 800+ followers in one month (team best); delivered weekly competitive analysis reports.</span></li>
+        </ul>
+        <span class="exp-highlight">互动率5%→12% · 涨粉800+/月 · 竞品分析驱动内容迭代</span>
+      </div>
+    </div>
+    <!-- 北师港浸大招生宣传 -->
+    <div class="exp-item reveal reveal-d4">
+      <div class="exp-meta">
+        <div class="exp-company"><span class="inline-zh">北师香港浸会大学</span><span class="inline-en">BNU-HKBU UIC</span></div>
+        <div class="exp-role"><span class="inline-zh">招生活动策划（京津冀地区）</span><span class="inline-en">Admissions Event Planning</span></div>
+        <div class="exp-period">2025.06 — 2025.07</div>
+      </div>
+      <div>
+        <ul class="exp-bullets">
+          <li><span class="inline-zh">线下活动执行：主导京津冀线下招生宣传，覆盖石家庄3所重点高中，负责校园宣讲、家长咨询及资料发放。</span><span class="inline-en">Led offline recruitment in Beijing-Tianjin-Hebei region, covering 3 key high schools in Shijiazhuang.</span></li>
+          <li><span class="inline-zh">数据分析与报告：整理考生咨询数据，利用Excel分类统计意向专业、分数段分布，形成4份宣传效果分析报告，为后续策略调整提供数据参考。</span><span class="inline-en">Consolidated inquiry data; segmented by major and score range using Excel; produced 4 analysis reports to inform future strategies.</span></li>
+        </ul>
+        <span class="exp-highlight">覆盖3所重点高中 · 4份数据报告指导策略</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title"><span class="inline-zh">项目经历</span><span class="inline-en">Projects</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+    <!-- Le Labo 快闪 -->
+    <div class="proj-card reveal reveal-d1">
+      <div class="proj-title"><span class="inline-zh">Le Labo 香氛品牌校园快闪活动</span><span class="inline-en">Le Labo Fragrance Campus Pop-Up</span></div>
+      <div class="proj-period">2026.03 — 2026.05</div>
+      <div class="proj-desc"><span class="inline-zh">针对Z世代，通过问卷调研（N=368）洞察“嗅觉体验”“可负担价格”“社交分享”为核心决策因子；策划“沉浸式嗅觉体验”快闪方案（快闪店+KOC种草+话题传播），校园试运行覆盖约200人次，输出《校园香氛消费洞察报告》。</span><span class="inline-en">Surveyed 368 Gen-Z respondents; identified key drivers: sensory experience, affordability, shareability. Designed immersive pop-up (flash store + KOC seeding + hashtag); piloted to ~200 attendees; published insight report.</span></div>
+    </div>
+    <!-- 拜耳公关大赛 -->
+    <div class="proj-card reveal reveal-d2">
+      <span class="proj-award"><span class="inline-zh">全国二等奖</span><span class="inline-en">National 2nd Prize</span></span>
+      <div class="proj-title"><span class="inline-zh">第十届中国大学生公共关系策划创业大赛 · 拜耳“宫益健康”</span><span class="inline-en">10th National PR Planning Competition · Bayer GynHealth</span></div>
+      <div class="proj-period">2025.05 — 2025.08</div>
+      <div class="proj-desc"><span class="inline-zh">开展120+女性用户深度访谈，产出需求分析报告；负责全流程公关策划案（社交媒体、社区讲座、商场体验展等），荣获全国二等奖。</span><span class="inline-en">120+ in-depth interviews with female users; needs analysis report; full PR plan (social media, community talks, mall pop-ups) → National 2nd Prize.</span></div>
+    </div>
+    <!-- CMAU 大赛 -->
+    <div class="proj-card reveal reveal-d3">
+      <span class="proj-award"><span class="inline-zh">校园一等奖</span><span class="inline-en">Campus 1st Prize</span></span>
+      <div class="proj-title"><span class="inline-zh">第五届CMAU市场研究与商业策划大赛</span><span class="inline-en">5th CMAU National Competition</span></div>
+      <div class="proj-period">2025.09 — 2025.12</div>
+      <div class="proj-desc"><span class="inline-zh">从0完成消费者调研（374份样本，SPSS t检验/Welch ANOVA），发现“消费场景驱动产品选择”核心洞察；策划“LSTI人格测试”H5+抖音特效+桌游卡牌+8校快闪+KOL矩阵，70万预算，ROI 48%-80%，获校园一等奖。</span><span class="inline-en">Full-cycle research (374 samples, SPSS), uncovering "scene drives choice". Integrated campaign: H5 quiz, Douyin AR, board game, pop-ups, KOL matrix; 700K budget, ROI 48-80% → Campus 1st Prize.</span></div>
+    </div>
+    <!-- 个人小红书 -->
+    <div class="proj-card reveal reveal-d4">
+      <div class="proj-title"><span class="inline-zh">个人小红书账号独立运营</span><span class="inline-en">Personal Xiaohongshu Account</span></div>
+      <div class="proj-period">2024.07 — 2024.08</div>
+      <div class="proj-desc"><span class="inline-zh">从0到1闭环搭建（赛道分析→定位→内容规划→视觉设计→数据复盘），累计发布32篇笔记；打造1篇浏览量30万+爆款及8篇万阅笔记，独立完成所有图文设计与短视频剪辑。验证了从内容策略到执行优化的完整能力。</span><span class="inline-en">Full growth loop: niche research, positioning, content planning, visual design, data review. 32 posts, 1 viral (300K+), 8 posts 10K+ views. All visuals and videos self-produced.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title"><span class="inline-zh">作品集</span><span class="inline-en">Portfolio</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="portfolio-grid">
+    <div class="port-card reveal reveal-d1"><div class="port-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><span class="port-tag">PR Writing</span><div class="port-title"><span class="inline-zh">公关文稿作品集</span><span class="inline-en">PR Writing Portfolio</span></div><div class="port-desc"><span class="inline-zh">新闻稿、媒体声明、品牌传播文本，中英双语专业公关叙事。</span><span class="inline-en">Press releases, media statements, bilingual brand copy.</span></div><a href="https://pan.baidu.com/s/1rXmfNIXpe4dGH6xFC9fhAg?pwd=emwx" target="_blank" class="port-link"><span class="inline-zh">查看作品</span><span class="inline-en">View Work</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    <div class="port-card reveal reveal-d2"><div class="port-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="port-tag"><span class="inline-zh">活动策划</span><span class="inline-en">Event Planning</span></span><div class="port-title"><span class="inline-zh">唐沫茶兮 x 非遗茶百戏 · 开业物料</span><span class="inline-en">Tangmo Tea x Tea Art Opening</span></div><div class="port-desc"><span class="inline-zh">完整媒体排期、物料体系、活动策划全案。</span><span class="inline-en">Media schedule, material system, full event plan.</span></div><a href="https://pan.baidu.com/s/1SFxjdd_PtBf8NhGu3tdrMw?pwd=z4eu" target="_blank" class="port-link"><span class="inline-zh">查看作品</span><span class="inline-en">View Work</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    <div class="port-card reveal reveal-d3"><div class="port-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span class="port-tag"><span class="inline-zh">内容运营</span><span class="inline-en">Content Ops</span></span><div class="port-title"><span class="inline-zh">公众号写作作品集</span><span class="inline-en">WeChat Articles</span></div><div class="port-desc"><span class="inline-zh">社交媒体长文、选题策划、读者运营案例。</span><span class="inline-en">Long-form posts, topic planning, engagement cases.</span></div><a href="https://pan.baidu.com/s/1BotQ0Q4nUrFnbOplN5iXtA?pwd=r285" target="_blank" class="port-link"><span class="inline-zh">查看作品</span><span class="inline-en">View Work</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    <div class="port-card reveal reveal-d1"><div class="port-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="port-tag"><span class="inline-zh">完整策划案</span><span class="inline-en">Full Campaign</span></span><div class="port-title"><span class="inline-zh">策划案 · 听见身体的声音</span><span class="inline-en">"Listen to Your Body"</span></div><div class="port-desc"><span class="inline-zh">背景研究、创意概念、执行路径、时间节点完整展现。</span><span class="inline-en">Research, concept, roadmap, timeline.</span></div><a href="https://pan.baidu.com/s/1q8KbkTgmXnPIAgMP20KTwQ?pwd=ee9g" target="_blank" class="port-link"><span class="inline-zh">查看作品</span><span class="inline-en">View Work</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    <div class="port-card reveal reveal-d2"><div class="port-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></div><span class="port-tag"><span class="inline-zh">品牌策划</span><span class="inline-en">Brand Campaign</span></span><div class="port-title"><span class="inline-zh">Le Labo 香氛品牌年轻化策划方案</span><span class="inline-en">Le Labo Rebranding</span></div><div class="port-desc"><span class="inline-zh">基于368份数据，校园年轻化品牌触达链路+活动创意方案。</span><span class="inline-en">368 data-driven brand touchpoints & rebrand proposal.</span></div><a href="https://pan.baidu.com/s/1VrCpUfH-ecZ-LeThmmT6ZQ?pwd=zusw" target="_blank" class="port-link"><span class="inline-zh">查看作品</span><span class="inline-en">View Work</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+    <div class="port-card reveal reveal-d3"><div class="port-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="port-tag"><span class="inline-zh">视觉设计</span><span class="inline-en">Visual Design</span></span><div class="port-title"><span class="inline-zh">AI + PS 视觉设计作品集</span><span class="inline-en">AI & Photoshop Portfolio</span></div><div class="port-desc"><span class="inline-zh">社交媒体配图、品牌物料、短视频封面。</span><span class="inline-en">Social graphics, brand assets, video thumbnails.</span></div><a href="https://pan.baidu.com/s/17lJ8Z0bWnjKk-F4rOg9Dzw?pwd=vrmu" target="_blank" class="port-link"><span class="inline-zh">查看作品</span><span class="inline-en">View Work</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-header reveal">
+    <span class="section-num">06</span>
+    <h2 class="section-title"><span class="inline-zh">联系我</span><span class="inline-en">Contact</span></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-wrap">
+    <div class="reveal">
+      <h3 class="contact-tagline"><span class="inline-zh">让我们一起<em>创造</em><br>有价值的传播</span><span class="inline-en">Let's build <em>meaningful</em><br>communication</span></h3>
+      <p class="contact-text"><span class="inline-zh">我热衷于媒介投放、数据分析与整合营销，正在寻找市场营销、公共关系、新媒体运营或消费者研究方向的实习/全职机会。欢迎通过电话或邮箱联系我！</span><span class="inline-en">Passionate about media buying, data analysis, and integrated marketing. Actively seeking internship/full-time roles in marketing, PR, new media, or consumer research. Feel free to reach out!</span></p>
+      <div style="margin-top: 20px; padding: 20px; background: var(--cream); border-left: 3px solid var(--accent);">
+        <div style="font-weight: 500; margin-bottom: 8px;">📊 自我评价 / 补充技能</div>
+        <ul style="margin-left: 20px; font-size: 13px; color: var(--mid); line-height: 1.6;">
+          <li><strong>市场分析能力：</strong>持有市场分析研究员 (MARs) Level1 证书，精通问卷设计、数据采集与分析流程，熟练使用 Excel（透视表/VLOOKUP）、SPSS、Python，具备基础 SQL，能独立完成消费者洞察与竞品分析。</li>
+          <li><strong>媒介投放与运营：</strong>多段活动策划、市场投放、新媒体运营实战经验；独立运营个人及企业小红书账号，熟悉内容策划、数据复盘与粉丝增长逻辑；擅长抖音短视频内容制作与平台热点结合。</li>
+          <li><strong>英语与沟通能力：</strong>雅思7分（口语写作双7），全英文授课环境，可流利进行英文书面及口头工作交流，适应跨文化团队协作。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="contact-info reveal reveal-d2">
+      <div class="contact-row"><div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="ci-label"><span class="inline-zh">电话</span><span class="inline-en">Phone</span></div><div class="ci-value">159 8952 1481</div></div></div>
+      <div class="contact-row"><div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ci-label"><span class="inline-zh">邮箱</span><span class="inline-en">Email</span></div><div class="ci-value">t330031260@mail.bnbu.edu.cn</div></div></div>
+      <div class="contact-row"><div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ci-label"><span class="inline-zh">院校</span><span class="inline-en">Institution</span></div><div class="ci-value">北师香港浸会大学 · 公共关系与广告学</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">王清萌 / Wang Qingmeng</div>
+  <span>媒介投放 · 数据分析 · 市场执行 · 活动策划</span>
+  <span>2025</span>
+</footer>
+
+<script>
+  (function() {
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    if (cursor && ring && window.matchMedia('(pointer: fine)').matches) {
+      document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        ring.style.left = e.clientX + 'px';
+        ring.style.top = e.clientY + 'px';
+      });
+      document.querySelectorAll('a, button, .btn-primary, .btn-outline, .port-link').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.width = '16px'; cursor.style.height = '16px';
+          ring.style.width = '52px'; ring.style.height = '52px';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.width = '10px'; cursor.style.height = '10px';
+          ring.style.width = '36px'; ring.style.height = '36px';
+        });
+      });
+    } else if (cursor && ring) {
+      cursor.style.display = 'none';
+      ring.style.display = 'none';
+    }
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => observer.observe(r));
+    window.setLang = function(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.querySelectorAll('.lang-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', (idx === 0 && lang === 'zh') || (idx === 1 && lang === 'en'));
+      });
+      document.documentElement.lang = lang === 'en' ? 'en' : 'zh';
+    };
+  })();
+</script>
+</body>
+</html>
